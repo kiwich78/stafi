@@ -1,0 +1,14 @@
+[Unit]
+Description=kulupu chain miner
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/kulupu
+ExecStart=/home/ubuntu/kulupu/kulupu-linux --validator --threads 2 --base-path /home/ubuntu/kulupu --author 2fjTsUVdUzFWEsNYKfqYMd7zN1MoPYEv56FfGXpwkZzXBRdS
+Restart=on-failure
+RestartSec=3
+KillMode=process
+[Install]
+WantedBy=multi-user.target
